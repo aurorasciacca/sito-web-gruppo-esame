@@ -8,87 +8,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Alan Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<script>
+document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(function (li) {
+    li.classList.add('has-sub');
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sub-toggle';
+    btn.textContent = '▾';
+    btn.setAttribute('aria-label', 'Apri sottomenu');
+    btn.setAttribute('aria-expanded', 'false');
+
+    li.querySelector(':scope > a').after(btn);
+
+    btn.addEventListener('click', function () {
+        var aperto = li.classList.toggle('open');
+        btn.setAttribute('aria-expanded', aperto);
+    });
+});
+</script>
 <body>
     
-    <header>
-        <div class="container nav-container">
-             <a href="index.html" class="marchio-link active">
-    <img src="immagini/MARCHIO.png" alt="Ludus" class="marchio">
-            </a>
-            <nav>
-    <ul>
-        <li><a href="giocattolo.html">Cos'è il giocattolo</a></li>
-        
-        <li class="dropdown-padre">
-            <a href="archivio.html">Archivio</a>
-            
-            <ul class="dropdown-menu">
-                <li class="sub-dropdown-padre">
-                    <a href="periodoantico.html">Periodo Antico</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="bamboladiterracotta.html">Bambole di Terracotta</a></li>
-                        <li><a href="animali.html">Animali da traino</a></li>
-                        <li><a href="yoyogreco.html">YO-YO Greco</a></li>
-                        <li><a href="crepundia.html">I Crepundia</a></li>
-                    </ul>
-                </li>
-                <li class="sub-dropdown-padre">
-                    <a href="1800-1900.html">1800-1900</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="soldatini.html">Soldatini di piombo</a></li>
-                        <li><a href="cavalloadondolo.html">Cavallo a dondolo</a></li>
-                        <li><a href="traumatropio.html">Traumatropio</a></li>
-                        <li><a href="prassinoscopio.html">Prassinoscopio</a></li>
-                    </ul>
-                </li>
-                   <li class="sub-dropdown-padre">
-                    <a href="1900-1945.html">1900-1945</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="meccano.html">Il Meccano</a></li>
-                        <li><a href="teddy.html">Teddy Bear</a></li>
-                        <li><a href="lincoln.html">Lincoln Logs</a></li>
-                        <li><a href="monopoly.html">Il Monopoly</a></li>
-                    </ul>
-                </li>
-                   <li class="sub-dropdown-padre">
-                    <a href="1945-1980.html">1945-1980</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="slinky.html">Lo Slinky</a></li>
-                        <li><a href="lego.html">Mattoncini LEGO</a></li>
-                        <li><a href="barbie.html">Barbie</a></li>
-                        <li><a href="cubo.html">Cubo di Rubik</a></li>
-                    </ul>
-                </li>
-                   <li class="sub-dropdown-padre">
-                    <a href="1980-Oggi.html">1980-Oggi</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="pony.html">My little Pony</a></li>
-                        <li><a href="transformes.html">Transformes</a></li>
-                        <li><a href="tamagotchi.html">Tamagotchi</a></li>
-                        <li><a href="furby.html">Furby</a></li>
-                        <li><a href="bratz.html">Bratz</a></li>
-                        <li><a href="squishmallows.html">Squishmallows</a></li>
-                    </ul>
-                </li>
-                </li>
-                   <li class="sub-dropdown-padre">
-                    <a href="periododigitale.html">Periodo Digitale</a>
-                    <ul class="submenu-giocattoli">
-                        <li><a href="tennisfortwo.html">Tennis for Two</a></li>
-                        <li><a href="pacman.html">Pac-Man</a></li>
-                        <li><a href="mariobros.html">Mario Bros</a></li>
-                        <li><a href="minecraft.html">Minecraft</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
+<header>
+    <div class="container nav-container">
+        <a href="index.html" class="marchio-link">
+            <img src="immagini/MARCHIO.png" alt="Ludus" class="marchio">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="giocattolo.html">Cos'è il giocattolo</a></li>
 
-        <li><a href="curiosita.html">Curiosità</a></li>
-        <li><a href="infoecontatti.html">Info e Contatti</a></li>
-    </ul>
-</nav>
-        </div>
-    </header>
+                <li class="dropdown-padre">
+                    <a href="archivio.html">Archivio</a>
+                    <ul class="dropdown-menu">
+                        <li class="sub-dropdown-padre">
+                            <a href="periodoantico.html">Periodo Antico</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="bamboladiterracotta.html">Bambole di Terracotta</a></li>
+                                <li><a href="animali.html">Animali da traino</a></li>
+                                <li><a href="yoyogreco.html">YO-YO Greco</a></li>
+                                <li><a href="crepundia.html">I Crepundia</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-dropdown-padre">
+                            <a href="1800-1900.html">1800-1900</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="soldatini.html">Soldatini di piombo</a></li>
+                                <li><a href="cavalloadondolo.html">Cavallo a dondolo</a></li>
+                                <li><a href="traumatropio.html">Traumatropio</a></li>
+                                <li><a href="prassinoscopio.html">Prassinoscopio</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-dropdown-padre">
+                            <a href="1900-1945.html">1900-1945</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="meccano.html">Il Meccano</a></li>
+                                <li><a href="teddy.html">Teddy Bear</a></li>
+                                <li><a href="lincoln.html">Lincoln Logs</a></li>
+                                <li><a href="monopoly.html">Il Monopoly</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-dropdown-padre">
+                            <a href="1945-1980.html">1945-1980</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="slinky.html">Lo Slinky</a></li>
+                                <li><a href="lego.html">Mattoncini LEGO</a></li>
+                                <li><a href="barbie.html">Barbie</a></li>
+                                <li><a href="cubo.html">Cubo di Rubik</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-dropdown-padre">
+                            <a href="1980-Oggi.html">1980-Oggi</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="pony.html">My little Pony</a></li>
+                                <li><a href="transformes.html">Transformes</a></li>
+                                <li><a href="tamagotchi.html">Tamagotchi</a></li>
+                                <li><a href="furby.html">Furby</a></li>
+                                <li><a href="bratz.html">Bratz</a></li>
+                                <li><a href="squishmallows.html">Squishmallows</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-dropdown-padre">
+                            <a href="periododigitale.html">Periodo Digitale</a>
+                            <ul class="submenu-giocattoli">
+                                <li><a href="tennisfortwo.html">Tennis for Two</a></li>
+                                <li><a href="pacman.html">Pac-Man</a></li>
+                                <li><a href="mariobros.html">Mario Bros</a></li>
+                                <li><a href="minecraft.html">Minecraft</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="curiosita.html">Curiosità</a></li>
+                <li><a href="infoecontatti.html">Info e Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
         <main class="container">
             <section class="intro">
@@ -98,8 +115,6 @@
                 <div class="intro-content">
                     <p>Nel 2001, mentre il mondo entrava nel nuovo millennio, quattro bambole prodotte dalla MGA Entertainment fecero il loro ingresso trionfale: Cloe, Jade, Sasha e Yasmin. Con le loro teste grandi, labbra carnose e uno stile "urban" decisamente marcato, le Bratz hanno ridefinito il concetto di fashion doll, parlando a una generazione di bambine che cercava qualcosa di più grintoso e contemporaneo.</p>
                 </div>
-      
-    </header>
 
             <div class="columns-container">
                 <div class="text-column">
