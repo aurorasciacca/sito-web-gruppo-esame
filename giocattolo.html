@@ -8,25 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Alan Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<script>
-document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(function (li) {
-    li.classList.add('has-sub');
-
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'sub-toggle';
-    btn.textContent = '▾';
-    btn.setAttribute('aria-label', 'Apri sottomenu');
-    btn.setAttribute('aria-expanded', 'false');
-
-    li.querySelector(':scope > a').after(btn);
-
-    btn.addEventListener('click', function () {
-        var aperto = li.classList.toggle('open');
-        btn.setAttribute('aria-expanded', aperto);
-    });
-});
-</script>
 <body>
     
 <header>
@@ -38,11 +19,17 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
             <ul>
                 <li><a href="giocattolo.html">Cos'è il giocattolo</a></li>
 
-                <li class="dropdown-padre">
+                <li class="dropdown-padre has-sub">
                     <a href="archivio.html">Archivio</a>
+                    <input type="checkbox" id="toggle-archivio" class="sub-check" aria-label="Apri il sottomenù Archivio">
+                    <label for="toggle-archivio" class="sub-toggle" aria-hidden="true">▾</label>
+
                     <ul class="dropdown-menu">
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="periodoantico.html">Periodo Antico</a>
+                            <input type="checkbox" id="toggle-antico" class="sub-check" aria-label="Apri il sottomenù Periodo Antico">
+                            <label for="toggle-antico" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="bamboladiterracotta.html">Bambole di Terracotta</a></li>
                                 <li><a href="animali.html">Animali da traino</a></li>
@@ -50,8 +37,11 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="crepundia.html">I Crepundia</a></li>
                             </ul>
                         </li>
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="1800-1900.html">1800-1900</a>
+                            <input type="checkbox" id="toggle-1800" class="sub-check" aria-label="Apri il sottomenù 1800-1900">
+                            <label for="toggle-1800" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="soldatini.html">Soldatini di piombo</a></li>
                                 <li><a href="cavalloadondolo.html">Cavallo a dondolo</a></li>
@@ -59,8 +49,11 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="prassinoscopio.html">Prassinoscopio</a></li>
                             </ul>
                         </li>
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="1900-1945.html">1900-1945</a>
+                            <input type="checkbox" id="toggle-1900" class="sub-check" aria-label="Apri il sottomenù 1900-1945">
+                            <label for="toggle-1900" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="meccano.html">Il Meccano</a></li>
                                 <li><a href="teddy.html">Teddy Bear</a></li>
@@ -68,8 +61,11 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="monopoly.html">Il Monopoly</a></li>
                             </ul>
                         </li>
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="1945-1980.html">1945-1980</a>
+                            <input type="checkbox" id="toggle-1945" class="sub-check" aria-label="Apri il sottomenù 1945-1980">
+                            <label for="toggle-1945" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="slinky.html">Lo Slinky</a></li>
                                 <li><a href="lego.html">Mattoncini LEGO</a></li>
@@ -77,8 +73,11 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="cubo.html">Cubo di Rubik</a></li>
                             </ul>
                         </li>
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="1980-Oggi.html">1980-Oggi</a>
+                            <input type="checkbox" id="toggle-1980" class="sub-check" aria-label="Apri il sottomenù 1980-Oggi">
+                            <label for="toggle-1980" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="pony.html">My little Pony</a></li>
                                 <li><a href="transformes.html">Transformes</a></li>
@@ -88,8 +87,11 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="squishmallows.html">Squishmallows</a></li>
                             </ul>
                         </li>
-                        <li class="sub-dropdown-padre">
+
+                        <li class="sub-dropdown-padre has-sub">
                             <a href="periododigitale.html">Periodo Digitale</a>
+                            <input type="checkbox" id="toggle-digitale" class="sub-check" aria-label="Apri il sottomenù Periodo Digitale">
+                            <label for="toggle-digitale" class="sub-toggle" aria-hidden="true">▾</label>
                             <ul class="submenu-giocattoli">
                                 <li><a href="tennisfortwo.html">Tennis for Two</a></li>
                                 <li><a href="pacman.html">Pac-Man</a></li>
@@ -97,6 +99,7 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
                                 <li><a href="minecraft.html">Minecraft</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </li>
 
@@ -106,7 +109,6 @@ document.querySelectorAll('.dropdown-padre, .sub-dropdown-padre').forEach(functi
         </nav>
     </div>
 </header>
-
      <section class="hero">
         <div class="hero-overlay-giocattolo">
             <img src="immagini/testate/coseilgiocattolo.jpg" alt="">
